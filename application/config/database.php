@@ -11,7 +11,7 @@ $db['default'] = array(
     'port'     => (int)(getenv('MYSQL_PORT') ?: 3306),
     'dbdriver'     => 'mysqli',
     'dbprefix'     => '',
-    'pconnect'     => false,
+    'pconnect'     => true,
     'db_debug'     => (ENVIRONMENT !== 'production'),
     'cache_on'     => false,
     'cachedir'     => '',
