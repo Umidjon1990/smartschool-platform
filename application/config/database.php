@@ -28,6 +28,9 @@ $db['default'] = array(
 
 $active_group = 'default';
 
+// Disabled for performance - this runs a query on every page load
+// Re-enable if you use multi-branch feature
+/*
 $mydb   = $db['default'];
 $mysqli = new mysqli($mydb['hostname'], $mydb["username"], $mydb["password"], $mydb["database"], $mydb["port"]);
 
@@ -65,3 +68,4 @@ if ($results = $mysqli->query("SHOW TABLES LIKE 'multi_branch'")) {
 }
 
 $mysqli->close();
+*/
