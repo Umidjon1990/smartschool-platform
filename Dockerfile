@@ -1,26 +1,14 @@
-# PHP 8.2 + Apache
-FROM php:8.2-apache
+FROM php:8.1-apache
 
-# Kerakli PHP kengaytmalari
-RUN apt-get update && apt-get install -y \
-    libpng-dev libjpeg62-turbo-dev libfreetype6-dev libzip-dev unzip \
- && docker-php-ext-configure gd --with-freetype --with-jpeg \
- && docker-php-ext-install gd mysqli mbstring zip
+# Kerakli PHP kengaytmalar
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-# Apache rewrite yoqish (CodeIgniter/htaccess uchun)
-RUN a2enmod rewrite
-
-# Loyihani web rootga nusxalash
+# Apache sozlamalari
 COPY . /var/www/html/
+WORKDIR /var/www/html/
 
-# DocumentRoot ichida .htaccess ishlashi uchun
-RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
+# Railway port
+ENV PORT=8080
+EXPOSE 8080
 
-# Yozish ruxsatlari (kerak bo‘ladigan papkalar)
-RUN chown -R www-data:www-data /var/www/html \
- && chmod -R 775 /var/www/html/uploads || true \
- && chmod -R 775 /var/www/html/backend || true \
- && mkdir -p /var/www/html/temp && chmod -R 775 /var/www/html/temp
-
-# Railway odatda 80-portni proksi qiladi
-EXPOSE 80
+CMD ["apache2-foreground"]
