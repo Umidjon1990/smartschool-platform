@@ -6,6 +6,7 @@ use Omnipay\Omnipay;
 
 require_once(APPPATH . 'third_party/omnipay/vendor/autoload.php');
 
+#[\AllowDynamicProperties]
 class Twocheckout_payment {
 
     private $_CI;

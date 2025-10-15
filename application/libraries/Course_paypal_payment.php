@@ -7,6 +7,7 @@ use Omnipay\Omnipay;
 
 require_once(APPPATH . 'third_party/omnipay/vendor/autoload.php');
 
+#[\AllowDynamicProperties]
 class Course_paypal_payment {
 
     private $_CI;

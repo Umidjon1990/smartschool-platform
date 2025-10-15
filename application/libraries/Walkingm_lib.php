@@ -2,6 +2,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
   
+#[\AllowDynamicProperties]
 class Walkingm_lib {
 
     private $_CI;

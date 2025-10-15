@@ -4,6 +4,7 @@ if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
+#[\AllowDynamicProperties]
 class Mailsmsconf
 {
 
@@ -234,15 +235,15 @@ class Mailsmsconf
                 }
 
             } elseif ($send_for == "online_admission_form_submission") {
-		if(isset($recipient_data) && !empty($recipient_data)){
-		$sender_details['parent_app_key']=$recipient_data['parent_app_key'];
+                if(isset($recipient_data) && !empty($recipient_data)){
+                $sender_details['parent_app_key']=$recipient_data['parent_app_key'];
                 $sender_details['app_key']=$recipient_data['app_key'];
-		}
+                }
                 
                 $this->sendOnlineadmission($chk_mail_sms, $sender_details, $chk_mail_sms['template'], $chk_mail_sms['subject'], $chk_mail_sms['template_id']);
-				
+                                
             } elseif ($send_for == "online_admission_fees_submission") {
-		if(isset($recipient_data) && !empty($recipient_data)){
+                if(isset($recipient_data) && !empty($recipient_data)){
 $sender_details['parent_app_key']=$recipient_data['parent_app_key'];
                 $sender_details['app_key']=$recipient_data['app_key'];
 }

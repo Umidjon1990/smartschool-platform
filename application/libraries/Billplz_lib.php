@@ -8,6 +8,7 @@ use Billplz\Connect;
 
 require_once(APPPATH . 'third_party/billplz/autoload.php');
 
+#[\AllowDynamicProperties]
 class Billplz_lib {
 
     private $_CI;

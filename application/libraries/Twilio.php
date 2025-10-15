@@ -3,6 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
+#[\AllowDynamicProperties]
 class Twilio {
 
     protected $_ci;
@@ -113,6 +114,7 @@ if (!extension_loaded("curl"))
  * HttpStatus is the response code of the request
  */
 
+#[\AllowDynamicProperties]
 class TwilioRestResponse {
 
     public $ResponseText;
@@ -153,6 +155,7 @@ class TwilioException extends Exception {
  * unreachable
  */
 
+#[\AllowDynamicProperties]
 class TwilioRestClient {
 
     protected $Endpoint;
@@ -259,6 +262,7 @@ class TwilioRestClient {
  * or private
  */
 
+#[\AllowDynamicProperties]
 class Verb {
 
     private $tag;
@@ -525,6 +529,7 @@ class Sms extends Verb {
 // Twilio Utility function and Request Validation
 // ========================================================================
 
+#[\AllowDynamicProperties]
 class TwilioUtils {
 
     protected $AccountSid;

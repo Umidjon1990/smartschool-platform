@@ -15,6 +15,7 @@ if (!defined('BASEPATH'))
  *
  * @subpackage Libraries
  */
+#[\AllowDynamicProperties]
 class Slug {
 
     /**

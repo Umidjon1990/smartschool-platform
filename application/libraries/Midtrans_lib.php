@@ -5,6 +5,7 @@ if (!defined('BASEPATH')) {
 }
 require_once APPPATH . 'third_party/midtrans/midtrans-php/Midtrans.php';
 
+#[\AllowDynamicProperties]
 class Midtrans_lib {
 
     public function __construct() {

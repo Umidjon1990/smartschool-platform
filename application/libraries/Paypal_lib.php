@@ -46,6 +46,7 @@ if (!defined('BASEPATH'))
  *
  */
 // ------------------------------------------------------------------------
+#[\AllowDynamicProperties]
 class paypal_lib {
 
     var $last_error;   // holds the last error encountered

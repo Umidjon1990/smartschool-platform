@@ -4,6 +4,7 @@ if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
+#[\AllowDynamicProperties]
 class Course_mail_sms {
 
     public function __construct() {

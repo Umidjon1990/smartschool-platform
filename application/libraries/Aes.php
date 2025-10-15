@@ -3,6 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
+#[\AllowDynamicProperties]
 class Aes {
 public $ENCRYPTION_ALGORITHM = 'AES-256-CBC';
     function __construct() {

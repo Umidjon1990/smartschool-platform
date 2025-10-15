@@ -13,6 +13,7 @@ if (!defined('BASEPATH'))
  * @It will helps to integrate Ajax pagination with loading image in CodeIgniter application.
  * @TutorialLink http://www.codexworld.com/ajax-pagination-in-codeigniter-framework/
  */
+#[\AllowDynamicProperties]
 class Ajax_pagination {
 
     var $base_url = ''; // The page we are linking to
