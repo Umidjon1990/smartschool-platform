@@ -24,7 +24,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   | a PHP script and you can easily do that on your own.
   |
  */
-$config['base_url'] = isset($_SERVER['REPL_SLUG']) ? 'https://' . $_SERVER['REPL_SLUG'] . '.' . $_SERVER['REPL_OWNER'] . '.repl.co/' : 'http://localhost:5000/';
+// Auto-detect Replit domain or use localhost for development
+if (isset($_SERVER['REPLIT_DEV_DOMAIN'])) {
+    $config['base_url'] = 'https://' . $_SERVER['REPLIT_DEV_DOMAIN'] . '/';
+} elseif (isset($_SERVER['HTTP_HOST'])) {
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http';
+    $config['base_url'] = $protocol . '://' . $_SERVER['HTTP_HOST'] . '/';
+} else {
+    $config['base_url'] = 'http://localhost:5000/';
+}
 
 
 /*
