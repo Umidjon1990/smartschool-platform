@@ -21,40 +21,23 @@ Database Railway MySQL orqali ulangan:
 
 Parol va boshqa ma'lumotlar Replit Secrets'da xavfsiz saqlanmoqda.
 
-### ⚠️ Database Import Kerak
+### ✅ Admin Foydalanuvchi
 
-SmartSchool loyihasi bo'sh database bilan ishlamaydi. Asosiy jadvallar import qilish kerak:
+**Super Admin yaratildi va tayyor:**
 
-**Kerakli jadvallar:**
-- sch_settings
-- sessions
-- languages
-- currencies
-- staff
-- users
-- students
-- classes
-- va boshqalar...
-
-### Database Import Qilish
-
-**Variant 1: Railway'dan eski database'ni export qiling**
-```bash
-mysqldump -h metro.proxy.rlwy.net -P 45813 -u root -p railway > smartschool_backup.sql
+```
+👤 Username (Email): admin@admin.com
+🔑 Password: admin
+📋 Role: Super Admin
 ```
 
-**Variant 2: SmartSchool SQL faylini import qiling**
+**Login:**
+1. Webview'da `/site/login` ga o'ting
+2. Username ga: `admin@admin.com` kiriting
+3. Password ga: `admin` kiriting
+4. Login tugmasini bosing
 
-Agar sizda `smartschool.sql` yoki `database.sql` fayl bor bo'lsa:
-
-1. Faylni Replit'ga yuklang
-2. Terminal'da quyidagi buyruqni bajaring:
-```bash
-mysql -h metro.proxy.rlwy.net -P 45813 -u root -p$MYSQL_PASSWORD railway < smartschool.sql
-```
-
-**Variant 3: phpMyAdmin orqali**
-Railway'da MySQL servisini oching va "Connect" tab'dan phpMyAdmin URL ni oling, keyin Import qiling.
+**Xavfsizlik:** Birinchi login'dan keyin parolni o'zgartiring!
 
 ## PHP 8.2 Uyg'unligi
 
