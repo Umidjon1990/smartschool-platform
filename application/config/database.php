@@ -4,10 +4,11 @@ $query_builder = true;
 
 $db['default'] = array(
     'dsn'          => '',
-    'hostname' => 'localhost',
-    'username' => 'root',
-    'password' => '',
-    'database' => 'smartschool_db',
+    'hostname' => getenv('MYSQL_HOST') ?: 'localhost',
+    'username' => getenv('MYSQL_USER') ?: 'root',
+    'password' => getenv('MYSQL_PASSWORD') ?: '',
+    'database' => getenv('MYSQL_DATABASE') ?: 'smartschool_db',
+    'port'     => (int)(getenv('MYSQL_PORT') ?: 3306),
     'dbdriver'     => 'mysqli',
     'dbprefix'     => '',
     'pconnect'     => false,
@@ -28,7 +29,7 @@ $db['default'] = array(
 $active_group = 'default';
 
 $mydb   = $db['default'];
-$mysqli = new mysqli($mydb['hostname'], $mydb["username"], $mydb["password"], $mydb["database"]);
+$mysqli = new mysqli($mydb['hostname'], $mydb["username"], $mydb["password"], $mydb["database"], $mydb["port"]);
 
 if ($mysqli->connect_errno) {
     printf("connection failed: %s\n", $mysqli->connect_error());
