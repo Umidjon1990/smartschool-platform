@@ -1,16 +1,16 @@
 FROM php:8.1-apache
 
-# PHP kengaytmalar
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-# Loyihani Apache serverga ko‘chirish
+# Loyihani Apache root’iga ko‘chirish
 COPY . /var/www/html/
+
 WORKDIR /var/www/html/
 
-# Apache konfiguratsiyasi
+# Apache sozlamalari
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
-# Railway uchun port
+# Railway port sozlamasi
 ENV PORT=80
 EXPOSE 80
 
